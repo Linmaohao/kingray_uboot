@@ -63,6 +63,7 @@
 #define CONFIG_ROCKUSB_G_DNL_PID        0x330d
 
 #ifdef CONFIG_ARM64
+/*
 #define ENV_MEM_LAYOUT_SETTINGS \
 	"scriptaddr=0x00500000\0" \
 	"pxefile_addr_r=0x00600000\0" \
@@ -71,6 +72,15 @@
 	"kernel_addr_r=0x00680000\0" \
 	"kernel_addr_c=0x02480000\0" \
 	"ramdisk_addr_r=0x04000000\0"
+*/
+#define ENV_MEM_LAYOUT_SETTINGS \
+	"scriptaddr=0x00500000\0" \
+	"pxefile_addr_r=0x00600000\0" \
+	"fdt_addr_r=0x01f00000\0" \
+	"kernel_addr_no_low_bl32_r=0x00280000\0" \
+	"kernel_addr_r=0x00680000\0" \
+	"kernel_addr_c=0x02480000\0" \
+	"ramdisk_addr_r=0x02C00000\0"
 #else
 #define ENV_MEM_LAYOUT_SETTINGS \
 	"scriptaddr=0x00500000\0" \
